@@ -46,12 +46,18 @@
             }
 
             function searchByName() {
+                
                 let nameSearch = document.getElementById('nameSearch').value;
                 const productFound = product.find(item => item.name == nameSearch);
                 console.log(productFound);
 
                 return productFound;
             }
+            function removeByName(){
+                let nameRemove = document.getElementById('nameSearch').value;
+                
+            }
+
 
 
         </script>

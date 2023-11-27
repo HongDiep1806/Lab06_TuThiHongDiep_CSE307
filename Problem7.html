@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 7</title>
+</head>
+
+<body>
+    <h1>MMSA Of N Numbers</h1>
+    <p>
+    <h5>Enter number separated by commas : </h5><input id="input" type="text" style="width: 300px;height: 20px;">
+    <button onclick="calMMSA()">Calculate MMSA</button></p>
+    <p id="print"></p>
+    <script>
+        function calMMSA() {
+            const input = document.getElementById('input').value;
+            let array = input.split(",");
+            array = array.map(function (element) {
+                return element.trim();
+            });
+            const numbers = array.map(function (element) {
+                return parseFloat(element);
+            });
+            var min = Math.min(...numbers);
+            var max = Math.max(...numbers);
+            var sum = 0;
+
+            array.forEach(item => {
+                sum += parseFloat(item);
+            });
+            var avg = sum / (numbers.length);
+            document.getElementById('print').innerHTML = "Min: " + min + "<br>" +
+                "Max: " + max + "<br>" +
+                "Sum: " + sum + "<br>" +
+                "Average: " + avg.toFixed(2);
+        }
+
+    </script>
+</body>
+
+</html>

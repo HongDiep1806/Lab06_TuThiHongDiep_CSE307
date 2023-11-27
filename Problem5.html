@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 5</title>
+</head>
+
+<body>
+    <h3>Numbers from 1 to N</h3>
+    <p>
+    <h5>Enter a positive integer N</h5> <input id="number" type="text" style="width: 300px;height: 20px;"> <button
+        onclick="printNumber()">Print
+        Numbers</button></p>
+    <p id="print"></p>
+    <script>
+        function printNumber() {
+            var n = parseInt(document.getElementById('number').value);
+            var result = '';
+            for (var i = 1; i <= n; i++) {
+                result += i + ' ';
+            }
+            document.getElementById('print').innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>
