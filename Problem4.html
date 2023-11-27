@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <center>
+        <h1>Product List</h1>
+        <button id="printButton" onclick="displayProduct()" style="width: 50px;height: 50px;">Print</button>
+
+        <button id="sortButton" onclick="myFunction()" style="width: 50px;height: 50px;">Sort</button>
+
+        <button id="addButton" onclick="addProduct()" style="width: 50px;height: 50px;">Add</button>
+        <p> <input id="nameSearch" type="text" style="width: 300px;height: 20px;"> <button id="Search"
+                onclick="searchByName()" style="width: 60px;height: 50px;">Search</button>
+        </p>
+
+
+
+        <script>
+            const product = [
+                { ID: 1, name: "Laptop", quantity: 5, price: 1200, image: "laptop_image" },
+                { ID: 2, name: "Tablet", quantity: 15, price: 800, image: "phone_image" },
+                { ID: 3, name: "Phone", quantity: 8, price: 1000, image: "tablet_image" }
+
+            ];
+
+            function myFunction() {
+                const sortArray = product.sort(function (a, b) {
+                    let x = a.name.toLowerCase();
+                    let y = b.name.toLowerCase();
+                    if (x < y) { return -1; }
+                    if (x > y) { return 1; }
+                    return 0;
+                });
+                console.log(sortArray);
+            }
+
+            function displayProduct() {
+                console.log(product);
+
+            }
+
+            function addProduct() {
+                product.unshift({ ID: 4, name: "SmartWatch", quantity: 15, price: 200, image: "smartwatch_image" });
+                product.push({ ID: 5, name: "Camera", quantity: 8, price: 1000, image: "camera_image" });
+                console.log(product);
+            }
+
+            function searchByName() {
+                let nameSearch = document.getElementById('nameSearch').value;
+                const productFound = product.find(item => item.name == nameSearch);
+                console.log(productFound);
+
+                return productFound;
+            }
+
+
+        </script>
+    </center>
+
+</body>
+
+</html>
